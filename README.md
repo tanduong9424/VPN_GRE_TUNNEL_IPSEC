@@ -6,38 +6,37 @@
     - **3. Cấu hình Static Route cho Tunnel**
     - **4. Cấu hình IPSec**
   - **II. Thực hiện thông qua dây mạng LAN kết nối 2 thiết bị**
-    - **1. Cấu hình OSPF**
-    - **2. Cấu hình Tunnel**
-    - **3. Cấu hình Static Route cho Tunnel**
-    - **4. Cấu hình IPSec**
+    - **1. Cấu hình Tunnel**
+    - **2. Cấu hình Static Route cho Tunnel**
+    - **3. Cấu hình IPSec**
     
  
   ## I. Cấu hình trên GNS3
   ### 1. Cấu hình OSPF
-  - Thực hiện cấu hình OSPF trên 8 router với Process ID OSPF là 1, Area là 100
-  - Trên R1
-  - ```
+  Thực hiện cấu hình OSPF trên 8 router với Process ID OSPF là 1, Area là 100
+  Trên R1
+  ```
         SITE-A# conf t
         SITE-A(config)# router ospf 1
         SITE-A(config)# net 192.168.10.0 0.0.0.255 area 100
         SITE-A(config)# net 10.0.90.0 0.0.0.255 area 100
+  ```
+   Trên R2
     ```
-  - Trên R2
-  - ```
         SITE-B# conf t
         SITE-B(config)# router ospf 1
         SITE-B(config)# net 192.168.20.0 0.0.0.255 area 100
         SITE-B(config)# net 10.0.100.0 0.0.0.255 area 100
     ```
-   - Trên R3
-    - ```
+    Trên R3
+    ```
         R3#conf t
         R3(config)# router ospf 1
         R3(config)# net 10.0.0.0 0.0.0.255 area 100
         R3(config)# net 10.0.10.0 0.0.0.255 area 100
-      ```
-    - Trên R4
-    - ```
+    ```
+    Trên R4
+    ```
         R4#conf t
         R4(config)# router ospf 1
         R4(config)# net 10.0.0.0 0.0.0.255 area 100
