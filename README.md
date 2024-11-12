@@ -13,7 +13,9 @@
  
   ## I. Cấu hình trên GNS3
   ### 1. Cấu hình OSPF
-  - Thực hiện cấu hình OSPF trên 8 router với Process ID OSPF là 1, Area là 100
+  
+  - Với sơ đồ mạng dưới, ta thực hiện cấu hình OSPF trên 8 router với Process ID OSPF là 1, Area là 100.
+  - ![](./hinh1.png)
   - Trên R1
   ```
         SITE-A# conf t
