@@ -1,15 +1,15 @@
 # Cấu hình VPN Gre Tunnel kết hợp IPSec
 ## Nội dung
-  **I. Cấu hình trên GNS3**
-    **1. Cấu hình OSPF**
-    **2. Cấu hình Tunnel**
-    **3. Cấu hình Static Route cho Tunnel**
-    **4. Cấu hình IPSec**
-  **II. Thực hiện thông qua dây mạng LAN kết nối 2 thiết bị**
-    **1. Cấu hình OSPF**
-    **2. Cấu hình Tunnel**
-    **3. Cấu hình Static Route cho Tunnel**
-    **4. Cấu hình IPSec**
+  - **I. Cấu hình trên GNS3**
+    - **1. Cấu hình OSPF**
+    - **2. Cấu hình Tunnel**
+    - **3. Cấu hình Static Route cho Tunnel**
+    - **4. Cấu hình IPSec**
+  - **II. Thực hiện thông qua dây mạng LAN kết nối 2 thiết bị**
+    - **1. Cấu hình OSPF**
+    - **2. Cấu hình Tunnel**
+    - **3. Cấu hình Static Route cho Tunnel**
+    - **4. Cấu hình IPSec**
     
  
   ## I. Cấu hình trên GNS3
