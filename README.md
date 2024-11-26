@@ -125,30 +125,10 @@
     SITE-A(config-isakmp)# exit
     SITE-A(config)# crypto isakmp key password address 10.0.100.1
   ```
-#### PHASE 1 trên R2
-  - Kế tiếp Phase 1 trên router R2 được cấu hình như sau:
-  ```
-    SITE-B# conf t
-    SITE-B(config)# crypto isakmp policy 10
-    SITE-B(config-isakmp)# encryption aes 256
-    SITE-B(config-isakmp)# hash md5
-    SITE-B(config-isakmp)# authentication pre-share
-    SITE-B(config-isakmp)# group 2
-    SITE-B(config-isakmp)# lifetime 3600
-    SITE-B(config-isakmp)# exit
-    SITE-B(config)# crypto isakmp key password address 10.0.90.1
-  ```
-
-
-
-
-
-
-
 #### PHASE 2 trên R1
   - Với Phase 2 trên R1 ta có 2 cách cấu hình Crypto Map và IPSec Profile:
   - Ở phần demo nhóm chọn ở cả 2 router đều là IPSec Profile nên sau đây là các câu lệnh cấu hình chi tiết cho 2 cách.
-#### CÁCH 1 IPSec Profile (cấu hình chính lúc demo báo cáo)
+##### CÁCH 1 IPSec Profile (cấu hình chính lúc demo báo cáo)
   ```
     SITE-A(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
     SITE-A(cfg-crypto-trans) mode transport
@@ -162,7 +142,7 @@
     SITE-A(config)# int tun1
     SITE-A(config-if)# tunnel protection ipsec profile GRE-PROFILE
   ```
-#### CÁCH 2 Crypto Map (xem thêm)
+##### CÁCH 2 Crypto Map (xem thêm)
   ```
     SITE-A(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac 
     SITE-A(cfg-crypto-trans)# mode transport
@@ -181,13 +161,25 @@
     SITE-A(config)# int Serial2/1
     SITE-A(config-if)# crypto map GRE-CMAP
   ```
+--------------------------------------------------------------------------------------------------------
 
-
-
+#### PHASE 1 trên R2
+  - Kế tiếp Phase 1 trên router R2 được cấu hình như sau:
+  ```
+    SITE-B# conf t
+    SITE-B(config)# crypto isakmp policy 10
+    SITE-B(config-isakmp)# encryption aes 256
+    SITE-B(config-isakmp)# hash md5
+    SITE-B(config-isakmp)# authentication pre-share
+    SITE-B(config-isakmp)# group 2
+    SITE-B(config-isakmp)# lifetime 3600
+    SITE-B(config-isakmp)# exit
+    SITE-B(config)# crypto isakmp key password address 10.0.90.1
+  ```
 
 #### PHASE 2 trên R2
  - Về Phase 2 trên R2 ta cũng có 2 cách cấu hình Crypto Map và IPSec Profile
-#### CÁCH 1 IPSec Profile (cấu hình chính lúc demo báo cáo)
+##### CÁCH 1 IPSec Profile (cấu hình chính lúc demo báo cáo)
   ```
     SITE-B(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
     SITE-B(cfg-crypto-trans) mode transport
@@ -201,7 +193,7 @@
     SITE-B(config)# int tun1
     SITE-B(config-if)# tunnel protection ipsec profile GRE-PROFILE
   ```
-#### CÁCH 2 Crypto Map (xem thêm)
+##### CÁCH 2 Crypto Map (xem thêm)
   ```
     SITE-B(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac 
     SITE-B(cfg-crypto-trans)# mode transport
@@ -331,4 +323,3 @@ show crypto ipsec session
 show running-config | include (crypto map|ipsec)
 trace 192.168.0.20 -P 1
  ```
-
