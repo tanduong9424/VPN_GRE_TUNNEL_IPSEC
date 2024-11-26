@@ -260,7 +260,7 @@
 ## III. Cấu hình IPSec
 - Tương tự như phần I, phần sẽ tiến hành nhanh như sau:
 #### Trên R1 (PC1) CRYPTO MAP
-			***PHASE 1***
+PHASE 1
 ```
   R1# conf t
   R1(config)# crypto isakmp policy 10
@@ -272,7 +272,7 @@
   R1(config-isakmp)# exit
   R1(config)#crypto isakmp key 123 address 192.168.1.20
 ```
-			***PHASE 2***
+PHASE 2
 ```
   R1# conf t
   R1(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac 
@@ -287,14 +287,14 @@
   R1(config-crypto-map)#	set peer 192.168.1.20
   R1(config-crypto-map)#	exit
 ```
-		***Bind (ràng buộc) to Interface***
+Bind (ràng buộc) to Interface
 ```
   R1(config)# int f0/0
   R1config-if)#	crypto map GRE-CMAP
 ```
 
 #### Trên R2 (PC2) IPSEC PROFILE
-            		***PHASE 1***
+PHASE 1
   ```
     R2# conf t
     R2(config)# crypto isakmp policy 10
@@ -306,7 +306,7 @@
     R2(config-isakmp)# exit
     R2(config)# crypto isakmp key password address 192.168.1.20
   ```
-            		***PHASE 2***
+PHASE 2
   ```
     R2(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
     R2(cfg-crypto-trans) mode transport
@@ -315,7 +315,7 @@
     R2(ipsec-profile) set transform-set GRE
     R2(ipsec-profile)# exit
   ```
-            	***Bind to Interface***
+Bind to Interface
   ```
     R2(config)# int tun1
     R2(config-if)# tunnel protection ipsec profile GRE-PROFILE
