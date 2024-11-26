@@ -294,7 +294,7 @@
 ```
 
 #### Trên R2 (PC2) IPSEC PROFILE
-            ***PHASE 1***
+            		***PHASE 1***
   ```
     R2# conf t
     R2(config)# crypto isakmp policy 10
@@ -306,7 +306,7 @@
     R2(config-isakmp)# exit
     R2(config)# crypto isakmp key password address 192.168.1.20
   ```
-            ***PHASE 2***
+            		***PHASE 2***
   ```
     R2(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
     R2(cfg-crypto-trans) mode transport
@@ -315,7 +315,7 @@
     R2(ipsec-profile) set transform-set GRE
     R2(ipsec-profile)# exit
   ```
-            ***Bind to Interface***
+            	***Bind to Interface***
   ```
     R2(config)# int tun1
     R2(config-if)# tunnel protection ipsec profile GRE-PROFILE
