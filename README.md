@@ -11,8 +11,8 @@
     - **3. Cấu hình IPSec**
     
 ## I. Cấu hình trên GNS3
-- Topology demo như sau:
-- Hình topology dùng để demo ![](./sodo1.png)
+- Topology  như sau:
+- Hình topology dùng để báo  ![](./sodo1.png)
 ### 1. Cấu hình OSPF
   - Với sơ đồ mạng trên, ta thực hiện cấu hình OSPF trên 8 router với Process ID OSPF là 1, Area là 100.
   - Trên R1
@@ -151,8 +151,8 @@
 #### PHASE 2 trên R1
   - Với Phase 2 trên R1 ta có 2 cách cấu hình Crypto Map và IPSec Profile:
   - Ở phần demo nhóm chọn ở cả 2 router đều là IPSec Profile nên sau đây là các câu lệnh cấu hình chi tiết cho 2 cách.
-##### CÁCH 1 IPSec Profile (cấu hình chính lúc demo báo cáo)
-*DEMO 7*
+##### CÁCH 1 IPSec Profile
+  *DEMO 7*
   ```
     SITE-A(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
     SITE-A(cfg-crypto-trans) mode transport
@@ -190,7 +190,7 @@
 
 #### PHASE 2 trên R2
  - Về Phase 2 trên R2 ta cũng có 2 cách cấu hình Crypto Map và IPSec Profile
-##### CÁCH 1 IPSec Profile (cấu hình chính lúc demo báo cáo)
+##### CÁCH 1 IPSec Profile
 *DEMO 8*
   ```
     SITE-B(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
