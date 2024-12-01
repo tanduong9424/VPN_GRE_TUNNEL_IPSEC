@@ -144,7 +144,7 @@
 --------------------------------------------------------------------------------------------------------
 #### PHASE 2 trên R1
   - Với Phase 2 trên R1 ta có 2 cách cấu hình Crypto Map và IPSec Profile:
-  - Ở phần demo nhóm chọn ở cả 2 router đều là IPSec Profile nên sau đây là các câu lệnh cấu hình chi tiết cho 2 cách.
+  - Ở phần báo cáo nhóm chọn ở cả 2 router đều là IPSec Profile nên sau đây là các câu lệnh cấu hình chi tiết cho 2 cách.
 ##### CÁCH 1 IPSec Profile  *DEMO 7*
   ```
     SITE-A(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
