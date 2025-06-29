@@ -81,7 +81,7 @@
   ```
 ### 2. Cấu hình Tunnel
   - Thực hiện tạo Tunnel trên 2 router R1 và R2
-  - Trên R1 ta cấu hình Tunnel như sau: *DEMO 1*
+  - Trên R1 ta cấu hình Tunnel như sau:
   ```
       SITE-A# conf t
       SITE-A(config)# int tunnel 1
@@ -91,7 +91,7 @@
       SITE-A(config)# end
   ```
 --------------------------------------------------------------------------------------------------------
-  - Trên R2 ta cấu hình Tunnel như sau: *DEMO 2*
+  - Trên R2 ta cấu hình Tunnel như sau:
   ```
       SITE-B# conf t
       SITE-B(config)# int tunnel 1
@@ -101,13 +101,13 @@
       SITE-B(config)# end
   ```
 ### 3. Cấu hình Static Route cho Tunnel
-  - Ở Router R1 ta cấu hình Static Route để đi vào Site A thông qua Tunnel như sau: *DEMO 3*
+  - Ở Router R1 ta cấu hình Static Route để đi vào Site A thông qua Tunnel như sau:
   ```
       SITE-A# conf t
       SITE-A(config)# ip route 192.168.20.0 255.255.255.0 192.168.0.2
   ```
 --------------------------------------------------------------------------------------------------------
-  - Ở Router R2 ta cũng cấu hình Static Route tưởng tự để đi vào Site A như sau: *DEMO 4*
+  - Ở Router R2 ta cũng cấu hình Static Route tưởng tự để đi vào Site A như sau:
   ```
       SITE-B# conf t
       SITE-B(config)# ip route 192.168.20.0 255.255.255.0 192.168.0.1
@@ -115,7 +115,7 @@
 ### 4. Cấu hình IPSec
 - Ta tiến hành chia việc cấu hình ra 2 phase gồm Phase 1 nhằm xác thực kết nối và Phase 2 tiến hành mã hóa. Ở trong Phase sẽ tiến hành 2 cách cấu hình là Crypto Map được cài đặt trên cổng Serial 2/1 của router R1 và IPSec Profile được cài đặt trên Tunel 1.
 #### PHASE 1 trên R1
-  - Đầu tiên Phase 1 trên router R1 được cấu hình như sau: *DEMO 5*
+  - Đầu tiên Phase 1 trên router R1 được cấu hình như sau:
   ```
     SITE-A# conf t
     SITE-A(config)# crypto isakmp policy 10
@@ -129,7 +129,7 @@
   ```
 --------------------------------------------------------------------------------------------------------
 #### PHASE 1 trên R2
-  - Kế tiếp Phase 1 trên router R2 được cấu hình như sau: *DEMO 6*
+  - Kế tiếp Phase 1 trên router R2 được cấu hình như sau:
   ```
     SITE-B# conf t
     SITE-B(config)# crypto isakmp policy 10
@@ -145,7 +145,7 @@
 #### PHASE 2 trên R1
   - Với Phase 2 trên R1 ta có 2 cách cấu hình Crypto Map và IPSec Profile:
   - Ở phần báo cáo nhóm chọn ở cả 2 router đều là IPSec Profile nên sau đây là các câu lệnh cấu hình chi tiết cho 2 cách.
-##### CÁCH 1 IPSec Profile  *DEMO 7*
+##### CÁCH 1 IPSec Profile
   ```
     SITE-A(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
     SITE-A(cfg-crypto-trans) mode transport
@@ -183,7 +183,7 @@
 
 #### PHASE 2 trên R2
  - Về Phase 2 trên R2 ta cũng có 2 cách cấu hình Crypto Map và IPSec Profile
-##### CÁCH 1 IPSec Profile *DEMO 8*
+##### CÁCH 1 IPSec Profile
   ```
     SITE-B(config)# crypto ipsec transform-set GRE esp-aes 256 esp-md5-hmac
     SITE-B(cfg-crypto-trans) mode transport
